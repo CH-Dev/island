@@ -1,0 +1,86 @@
+@CHARSET "ISO-8859-1";
+
+p.ActionP{
+	font-size:100%;
+	margin: 0;
+    padding: 0;
+    text-align: left;
+}
+p.InvP{
+	font-size:100%;
+	margin: 0;
+    padding: 0;
+    text-align: right;
+}
+p.logP{
+	font-size:100%;
+	margin: 0;
+    padding: 0;
+    text-align: left;
+}
+p.chatP{
+	font-size:100%;
+	margin: 0;
+    padding: 0;
+    text-align: left;
+}
+input.chatbox{
+	font-size:100%;
+	width:90%;
+	margin: 0;
+    padding: 0;
+}
+.nav{
+	position: absolute; 
+	top: 3%;
+	float: left;
+   	overflow-y:scroll;
+	height:52%;
+	width:30%;
+}
+.log{
+	position: absolute; 
+	top: 0%;
+	left:31%;
+	overflow-y:scroll;
+	height:55%;
+	width:40%;
+}
+chat {
+	position: absolute; 
+	bottom: 5%;
+	left:0;
+	overflow-y:scroll;
+	height:40%;
+	width:71%;
+}
+chatsender{
+	position: absolute; 
+	bottom: 1%;
+	left:0;
+	height:5%;
+	width:60%;
+}
+
+/*Accordion1 used for skills and inventory*/
+.accordionclear div .content {/* this hides the Contents inside the inactive boxes*/
+	display: none;
+	margin: 5px 0;
+	overflow: auto;
+}
+.accordionclear div:target .content {/*Displays the contents of the boxes*/
+	display: block;
+}
+.accordionclear > div:target {/*Defines the heights of the active box*/
+	height:60%;
+}
+.accordionclear > div {/*Causes the sliding efect of opening and closing boxes*/
+	height: 0px;
+	overflow: hidden;
+
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
