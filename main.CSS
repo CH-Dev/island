@@ -44,11 +44,11 @@ input.chatbox{
 	left:31%;
 	overflow-y:scroll;
 	height:55%;
-	width:60%;
+	width:50%;
 }
 .inventorywindow{
 	position: absolute; 
-	top: 0%;
+	top: 10%;
 	left:80%;
 	overflow-y:scroll;
 	height:55%;
@@ -60,7 +60,7 @@ chat {
 	left:0;
 	overflow-y:scroll;
 	height:40%;
-	width:91%;
+	width:81%;
 }
 chatsender{
 	position: absolute; 
