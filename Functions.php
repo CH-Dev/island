@@ -71,20 +71,24 @@ function printinv($PID){
 		echo "<div class='content'>";
 		$bag=getInventory($PID);
 		$bagN=count($bag);
-		for($x=0;$x<$bagN;$x=$x+6){
+		for($x=0;$x<$bagN;$x=$x+7){
 			$name=$bag[$x];
 			$Quant=$bag[$x+1];
 			$IID=$bag[$x+2];
 			$HP=$bag[$x+3];
 			$Desc=$bag[$x+4];
 			$ACT=$bag[$x+5];
-			if($ACT==1){
+			$BID=$bag[$x+6];
+			echo "<form action='action.php' method='post'><input type='submit' value='$Quant:$name'>
+				<input type='text' value='$BID' name='bag' hidden><input type='text' value='ACTIVATE' name='mode' hidden>
+			</form>";
+			/*if($ACT==1){
 				echo "<b>";
 			}//This section currently has the HP attribute of tools disabled
 			echo "<p title='$Desc' class='InvP'>$Quant:$name $HP</p>";
 			if($ACT==1){
 				echo "</b>";
-			}
+			}*/
 		}
 		echo "</div>";
 	echo "</div>";
@@ -573,7 +577,7 @@ function getRewardinfo($RID){
 }
 function getInventory($PID){
 	$conn=conDB();
-	$sql="SELECT items.Name,items.IDKey,bag.Quantity,items.Description,bag.Active,bag.Health FROM bag INNER JOIN items ON bag.ItemID=items.IDKey WHERE bag.PlayerID='$PID'";
+	$sql="SELECT items.Name,items.IDKey,bag.Quantity,items.Description,bag.Active,bag.Health,bag.IDKey AS BID FROM bag INNER JOIN items ON bag.ItemID=items.IDKey WHERE bag.PlayerID='$PID'";
 	$x=0;
 	$result = mysqli_query($conn, $sql);
 	$return=array();
@@ -584,6 +588,7 @@ function getInventory($PID){
 		$HP=$row["Health"];
 		$desc=$row["Description"];
 		$active=$row["Active"];
+		$BID=$row["BID"];
 		$return[$x]=$name;
 		$x++;
 		$return[$x]=$quant;
@@ -595,6 +600,8 @@ function getInventory($PID){
 		$return[$x]=$desc;
 		$x++;
 		$return[$x]=$active;
+		$x++;
+		$return[$x]=$BID;
 		$x++;
 	}
 	return $return;

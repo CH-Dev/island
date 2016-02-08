@@ -18,5 +18,9 @@ else if($mode=="MOVE"){
 	$route=$_POST["route"];
 	MovePlayer($PID,$route);
 }
+else if($mode=="ACTIVATE"){
+	$BID=$_POST["bag"];
+	activateItem($PID,$BID);
+}
 PrintUI($PID);
 ?>
