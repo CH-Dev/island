@@ -93,7 +93,7 @@ function printinv($PID){
 	echo "</div>";
 }
 function printskills($PID){
-	echo "<div id='skillstab'>";
+	echo "<div id='skillstab' class='inventorywindow'>";
 		echo "<div class='content'>";
 		$skills=getSkillInfo($PID);
 		$skillsN=count($skills);
@@ -106,9 +106,9 @@ function printskills($PID){
 			$desc=$skills[$x+5];
 			$xpneeded=getXPNeeded($lvl);
 			if($Bnum>0&&$Bstr>0){
-				echo "<p title='$desc' class='InvP'>$xp/$xpneeded LVL $lvl+$Bstr/$Bnum $skillName</p>";
+				echo "$xp/$xpneeded LVL $lvl+$Bstr/$Bnum $skillName";
 			}
-			echo "<p title='$desc' class='InvP'>$xp/$xpneeded LVL $lvl $skillName</p>";
+			echo "$xp/$xpneeded LVL $lvl $skillName";
 		}
 		echo "</div>";
 	echo "</div>";
