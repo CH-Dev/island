@@ -67,7 +67,7 @@ function printLheader(){
 	echo "</lheader>";
 }
 function printinv($PID){
-	echo "<div id='invtab'>";
+	echo "<div id='invtab' class='inventorywindow'>";
 		echo "<div class='content'>";
 		$bag=getInventory($PID);
 		$bagN=count($bag);
@@ -79,16 +79,15 @@ function printinv($PID){
 			$Desc=$bag[$x+4];
 			$ACT=$bag[$x+5];
 			$BID=$bag[$x+6];
-			echo "<form action='action.php' method='post'><input type='submit' value='$Quant:$name'>
-				<input type='text' value='$BID' name='bag' hidden><input type='text' value='ACTIVATE' name='mode' hidden>
-			</form>";
-			/*if($ACT==1){
+			if($ACT==1){
 				echo "<b>";
 			}//This section currently has the HP attribute of tools disabled
-			echo "<p title='$Desc' class='InvP'>$Quant:$name $HP</p>";
+			echo "<p title='$Desc' class='InvP'><form action='action.php' method='post'><input type='submit' value='$Quant:$name'>
+				<input type='text' value='$BID' name='bag' hidden><input type='text' value='ACTIVATE' name='mode' hidden>
+			</form></p>";
 			if($ACT==1){
 				echo "</b>";
-			}*/
+			}
 		}
 		echo "</div>";
 	echo "</div>";
