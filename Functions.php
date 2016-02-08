@@ -106,9 +106,9 @@ function printskills($PID){
 			$desc=$skills[$x+5];
 			$xpneeded=getXPNeeded($lvl);
 			if($Bnum>0&&$Bstr>0){
-				echo "$xp/$xpneeded LVL $lvl+$Bstr/$Bnum $skillName";
+				echo "$xp/$xpneeded LVL $lvl+$Bstr/$Bnum $skillName<br>";
 			}
-			echo "$xp/$xpneeded LVL $lvl $skillName";
+			echo "$xp/$xpneeded LVL $lvl $skillName<br>";
 		}
 		echo "</div>";
 	echo "</div>";
